@@ -1,26 +1,29 @@
 pipeline {
-   agent none
+   agent any
    
     stages {
         stage('Compile') { //prod
-        agent any
+        
             steps {
+                script {
                 echo "Compile the code"
-                sh "mvn compile"
+                }
             }
         }
          stage('UnitTest') { //test
-         agent any
+         
             steps {
+                script {
                 echo "Test the code"
-                sh "mvn test"
+                }
             }
         }
          stage('Package') {//dev
-        //agent {label 'linux_slave'}
+       
             steps {
+                script {
                 echo "Package the code"
-                sh "mvn package"
+                }
             }
         }
     }
