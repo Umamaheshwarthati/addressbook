@@ -1,8 +1,8 @@
 pipeline {
    agent any
    tools {
-      tool name: 'jdk', type: 'jdk'
-      tool name: 'maven', type: 'maven'
+      jdk 'myjdk'
+      maven 'mymaven'
    }
     parameters {
         string(name: 'Environment', defaultValue: 'test', description: 'The Environment to build for')
