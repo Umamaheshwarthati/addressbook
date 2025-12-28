@@ -2,7 +2,7 @@ pipeline {
    agent none
    tools{
 //     jdk "myjava"
-        maven "mymaven"
+//        maven "mymaven"
    }
     stages {
         stage('Compile') { //prod
@@ -20,7 +20,7 @@ pipeline {
             }
         }
          stage('Package') {//dev
-        agent {label 'linux_slave'}
+        //agent {label 'linux_slave'}
             steps {
                 echo "Package the code"
                 sh "mvn package"
