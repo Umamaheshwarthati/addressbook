@@ -1,6 +1,8 @@
 pipeline {
    agent any
-   
+    parameters {
+        string(name: 'Environment', defaultValue: 'test', description: 'The Environment to build for')
+    }
     stages {
         stage('Compile') { //prod
         
