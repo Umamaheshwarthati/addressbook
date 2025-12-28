@@ -10,8 +10,9 @@ pipeline {
         
             steps {
                 script {
-                echo "Compile the code"
-                echo "Test the code : ${params.Environment}"
+                   echo "Compile the code"
+                   echo "Test the code : ${params.Environment}"
+                   sh "mvn complie"
                 }
             }
         }
@@ -23,7 +24,8 @@ pipeline {
            }
             steps {
                 script {
-                echo "Test the code : ${params.Environment}"
+                   echo "Test the code : ${params.Environment}"
+                   sh "mvn test"
                 }
             }
         }
@@ -31,8 +33,9 @@ pipeline {
        
             steps {
                 script {
-                echo "Package the code"
-                echo "Package the code version: ${params.APP_VERSION}"
+                   echo "Package the code"
+                   echo "Package the code version: ${params.APP_VERSION}"
+                   sh "mvn package"
                 }
             }
         }
