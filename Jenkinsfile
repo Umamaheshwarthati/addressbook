@@ -16,7 +16,7 @@ pipeline {
          
             steps {
                 script {
-                echo "Test the code"
+                echo "Test the code : ${params.Environment}"
                 }
             }
         }
