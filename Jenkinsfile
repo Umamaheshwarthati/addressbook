@@ -1,5 +1,9 @@
 pipeline {
    agent any
+   tools {
+      tool name: 'jdk', type: 'jdk'
+      tool name: 'maven', type: 'maven'
+   }
     parameters {
         string(name: 'Environment', defaultValue: 'test', description: 'The Environment to build for')
         booleanParam(name: 'ExecuteTests', defaultValue: true, description: 'Execute the Tests')
